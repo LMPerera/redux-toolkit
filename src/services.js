@@ -5,7 +5,7 @@ const BASE_URL = "http://localhost:5050";
 
 export const GetPosts = createAsyncThunk(
   "post/getPosts",
-  async () => await (await axios.get(`${BASE_URL}/posts`)).data
+  async () => await await (await axios.get(`${BASE_URL}/posts`)).data
 );
 
 export const CreatePost = createAsyncThunk(
@@ -15,5 +15,5 @@ export const CreatePost = createAsyncThunk(
 
 export const DeletePost = createAsyncThunk(
   "post/deletePost",
-  async (post) => await axios.post(`${BASE_URL}/post`, post).data
+  async (post) => await (await axios.post(`${BASE_URL}/post`, post)).data
 );
