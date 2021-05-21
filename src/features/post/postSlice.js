@@ -10,13 +10,13 @@ export const postSlice = createSlice({
   },
   extraReducers: {
     [GetPosts.fulfilled]: (state, action) => {
-      state.posts = action.payload.data;
+      state.posts = action.payload;
     },
     [GetPosts.rejected]: (state, action) => {
       state.posts = [];
     },
     [CreatePost.fulfilled]: (state, action) => {
-      state.posts.unshift(action.payload.data);
+      state.posts.unshift(action.payload);
     },
   },
 });
